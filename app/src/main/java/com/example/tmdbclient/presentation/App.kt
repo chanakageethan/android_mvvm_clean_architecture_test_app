@@ -1,6 +1,7 @@
 package com.example.tmdbclient.presentation
 
 import android.app.Application
+import android.util.Log
 import com.example.tmdbclient.BuildConfig
 import com.example.tmdbclient.presentation.di.Injector
 import com.example.tmdbclient.presentation.di.artist.ArtistSubComponent
@@ -18,6 +19,8 @@ class App : Application() ,Injector {
 
     override fun onCreate() {
         super.onCreate()
+
+        Log.i("==","Hello")
 
         appComponent = DaggerAppComponent.builder()
             .appModule(AppModule(applicationContext))

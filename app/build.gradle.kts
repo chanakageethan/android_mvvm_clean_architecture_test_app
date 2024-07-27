@@ -17,7 +17,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "API_KEY", "\"1ae65eb9932337d3dde85a44c6687309\"")
-
+        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
     }
 
     buildTypes {
@@ -49,7 +49,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     val lifecycleVersion = "2.6.0-alpha01"
     val roomVersion = "2.6.1"
-    val daggerVersion = "2.42"
+    val daggerVersion = "2.51.1"
     val retrofitVersion = "2.9.0"
     val glideVersion = "4.13.2"
 
