@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmdbclient.R
 import com.example.tmdbclient.databinding.ActivityMovieBinding
 import com.example.tmdbclient.databinding.ActivityTvShowBinding
-import com.example.tmdbclient.presentation.di.Injector
 import com.example.tmdbclient.presentation.movie.MovieAdapter
 import com.example.tmdbclient.presentation.movie.MovieViewModel
 import com.example.tmdbclient.presentation.movie.MovieViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-
+@AndroidEntryPoint
 class TvShowActivity : AppCompatActivity() {
 
     @Inject
@@ -43,8 +43,8 @@ class TvShowActivity : AppCompatActivity() {
             insets
         }
 
-        (application as Injector).createTvShowSubComponent()
-            .inject(this)
+//        (application as Injector).createTvShowSubComponent()
+//            .inject(this)
 
         tvShowViewModel = ViewModelProvider(this,factory)
             .get(TvShowViewModel::class.java)

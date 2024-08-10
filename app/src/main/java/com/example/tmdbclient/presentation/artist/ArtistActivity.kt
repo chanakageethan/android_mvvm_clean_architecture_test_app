@@ -17,12 +17,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmdbclient.R
 import com.example.tmdbclient.databinding.ActivityArtistBinding
 import com.example.tmdbclient.databinding.ActivityMainBinding
-import com.example.tmdbclient.presentation.di.Injector
 import com.example.tmdbclient.presentation.tv.TvAdapter
 import com.example.tmdbclient.presentation.tv.TvShowViewModel
 import com.example.tmdbclient.presentation.tv.TvShowViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-
+@AndroidEntryPoint
 class ArtistActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: ArtistViewModelFactory
@@ -41,8 +41,8 @@ class ArtistActivity : AppCompatActivity() {
             insets
         }
 
-        (application as Injector).createArtistSubComponent()
-            .inject(this)
+//        (application as Injector).createArtistSubComponent()
+//            .inject(this)
 
         artistViewModel = ViewModelProvider(this,factory)
             .get(AtistViewModel::class.java)
