@@ -18,9 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmdbclient.R
 import com.example.tmdbclient.databinding.ActivityMainBinding
 import com.example.tmdbclient.databinding.ActivityMovieBinding
-import dagger.hilt.android.AndroidEntryPoint
+import com.example.tmdbclient.presentation.di.Injector
 import javax.inject.Inject
-@AndroidEntryPoint
+
 class MovieActivity : AppCompatActivity() {
     @Inject
     lateinit var factory: MovieViewModelFactory
@@ -39,7 +39,8 @@ class MovieActivity : AppCompatActivity() {
             insets
         }
 
-
+        (application as Injector).createMovieSubComponent()
+            .inject(this)
 
         movieViewModel = ViewModelProvider(this,factory)
             .get(MovieViewModel::class.java)

@@ -7,14 +7,11 @@ import com.example.tmdbclient.presentation.artist.ArtistViewModelFactory
 import com.example.tmdbclient.presentation.tv.TvShowViewModelFactory
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 
 @Module
-@InstallIn(ActivityComponent::class)
 class TvShowModule {
 
-
+    @TvShowScope
     @Provides
     fun providerTvShowViewModelFactory(
         getTvShowsUseCase: GetTvShowsUseCase,

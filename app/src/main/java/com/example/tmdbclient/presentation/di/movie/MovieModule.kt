@@ -8,14 +8,11 @@ import com.example.tmdbclient.presentation.artist.ArtistViewModelFactory
 import com.example.tmdbclient.presentation.movie.MovieViewModelFactory
 import dagger.Module
 import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 
 @Module
-@InstallIn(ActivityComponent::class)
 class MovieModule {
 
-
+    @MovieScope
     @Provides
     fun providerMovieViewModelFactory(
         getMoviesUseCase: GetMoviesUseCase,
