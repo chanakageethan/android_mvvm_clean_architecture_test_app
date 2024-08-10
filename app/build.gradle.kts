@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -41,6 +42,7 @@ android {
         buildConfig = true
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -49,7 +51,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     val lifecycleVersion = "2.6.0-alpha01"
     val roomVersion = "2.6.1"
-    val daggerVersion = "2.51.1"
+//    val daggerVersion = "2.51.1"
     val retrofitVersion = "2.9.0"
     val glideVersion = "4.13.2"
 
@@ -67,8 +69,11 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     //Dagger
-    implementation ("com.google.dagger:dagger:$daggerVersion")
-    kapt ("com.google.dagger:dagger-compiler:$daggerVersion")
+//    implementation ("com.google.dagger:dagger:$daggerVersion")
+//    kapt ("com.google.dagger:dagger-compiler:$daggerVersion")
+    implementation ("com.google.dagger:hilt-android:2.44")
+    annotationProcessor ("com.google.dagger:hilt-compiler:2.44")
+
 
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
@@ -87,3 +92,4 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
+
